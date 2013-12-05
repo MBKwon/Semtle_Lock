@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FEB0BED81850046A00CAC3D8"
+               BlueprintIdentifier = "FEB0BF131850097C00CAC3D8"
                BuildableName = "Semtle_Lock.app"
                BlueprintName = "Semtle_Lock"
                ReferencedContainer = "container:Semtle_Lock.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FEB0BEF31850046A00CAC3D8"
+               BlueprintIdentifier = "FEB0BF341850097C00CAC3D8"
                BuildableName = "Semtle_LockTests.xctest"
                BlueprintName = "Semtle_LockTests"
                ReferencedContainer = "container:Semtle_Lock.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FEB0BED81850046A00CAC3D8"
+            BlueprintIdentifier = "FEB0BF131850097C00CAC3D8"
             BuildableName = "Semtle_Lock.app"
             BlueprintName = "Semtle_Lock"
             ReferencedContainer = "container:Semtle_Lock.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FEB0BED81850046A00CAC3D8"
+            BlueprintIdentifier = "FEB0BF131850097C00CAC3D8"
             BuildableName = "Semtle_Lock.app"
             BlueprintName = "Semtle_Lock"
             ReferencedContainer = "container:Semtle_Lock.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FEB0BED81850046A00CAC3D8"
+            BlueprintIdentifier = "FEB0BF131850097C00CAC3D8"
             BuildableName = "Semtle_Lock.app"
             BlueprintName = "Semtle_Lock"
             ReferencedContainer = "container:Semtle_Lock.xcodeproj">
