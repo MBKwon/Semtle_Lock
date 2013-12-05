@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+//ERROR_DEFINE
+#define SMT_LOCK_OK                             0x00000000
+#define SMT_LOCK_NOT_KEY                        0x00000001
+#define SMT_LOCK_ENCRYPTION_FAIL                0x00000002
+#define SMT_LOCK_FILESAVE_FAIL                  0x00000003
+
+
 @interface SMTLockController : NSObject
+
+@property (nonatomic, strong) NSString *key;
+
+-(NSInteger)setPassword:(NSString *)password;
 
 @end

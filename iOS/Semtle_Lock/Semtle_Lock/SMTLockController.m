@@ -11,4 +11,33 @@
 
 @implementation SMTLockController
 
+
+-(NSInteger)setPassword:(NSString *)password
+{
+    if (_key == nil) {
+        
+        return SMT_LOCK_NOT_KEY;
+        
+    } else {
+        
+        NSData *rowData = [password dataUsingEncoding:NSUTF8StringEncoding];
+        NSData *encryptedData = [rowData encryptAES256WithKey:_key];
+        
+        if (encryptedData == nil) {
+            
+            return SMT_LOCK_ENCRYPTION_FAIL;
+        
+        } else {
+            
+            BOOL result = [encryptedData writeToFile:@"SMT_ITEM_PASS" atomically:YES];
+            
+            if (result == YES) {
+                return SMT_LOCK_OK;
+            } else {
+                return SMT_LOCK_FILESAVE_FAIL;
+            }
+        }
+    }
+}
+
 @end
