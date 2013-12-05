@@ -7,6 +7,7 @@
 //
 
 #import "SMTLockController.h"
+#import "NSData+AES256.h"
 
 @implementation SMTLockController
 
