@@ -14,3 +14,16 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+
+#define SMT_RESULT_CODE NSInteger
+#define FILE_NAME @"M0nWZhyJe9V5NtqYywRZ3yVFzvoeOLdaT1q3Gex8HAM="
+
+
+
+#define DEFAULT_PATH [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+#define ALERT_VIEW_RECT CGRectMake(0, 0, 500, 300)
+
+#define IS_IOS6_EARLIER (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1)
+#define IS_IOS7_LATER ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 7.0)
