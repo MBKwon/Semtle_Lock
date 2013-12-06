@@ -11,22 +11,36 @@
 
 @implementation SMTLockController
 
+-(id)init
+{
+    self = [super init];
+    if (self) {
+        //initialized code
+        _key = @"PASSWORD_KEY";
+    }
+    
+    return self;
+}
+
 -(SMT_RESULT_CODE)savePass:(NSData *)encryptedData
 {
     
     NSString *fullPath = [DEFAULT_PATH  stringByAppendingString:@"/"];
     fullPath = [fullPath stringByAppendingString:FILE_NAME];
     
-    BOOL result = [encryptedData writeToFile:FILE_NAME atomically:YES];
+    BOOL result = [encryptedData writeToFile:fullPath atomically:NO];
     
     if (result == YES) {
+        
         return SMT_LOCK_OK;
+        
     } else {
+        
         return SMT_LOCK_FILESAVE_FAIL;
     }
 }
 
--(SMT_RESULT_CODE)loadPass:(NSData *)encryptedData
+-(SMT_RESULT_CODE)loadPass:(NSData **)encryptedData
 {
     
     NSString *fullPath = [DEFAULT_PATH  stringByAppendingString:@"/"];
@@ -34,14 +48,14 @@
     
     
     BOOL result = [[NSFileManager defaultManager] fileExistsAtPath:fullPath];
-    if (!result) {
+    if (result == YES) {
         
-        return SMT_LOCK_FILELOAD_FAIL;
+        *encryptedData = [NSData dataWithContentsOfFile:fullPath];
+        return SMT_LOCK_OK;
         
     } else {
         
-        encryptedData = [NSData dataWithContentsOfFile:fullPath];
-        return SMT_LOCK_OK;
+        return SMT_LOCK_FILELOAD_FAIL;
     }
 }
 
@@ -89,14 +103,17 @@
         } else {
             
             NSData *savedPassData = [NSData new];
-            SMT_RESULT_CODE result = [self loadPass:savedPassData];
+            SMT_RESULT_CODE result = [self loadPass:&savedPassData];
             
             if (result == SMT_LOCK_OK) {
                 
                 if ([encryptedData isEqualToData:savedPassData] == YES) {
+                    
                     return result;
+                    
                 } else {
-                    return SMT_LOCK_PASS_NOT_MATCH;
+                    
+                    return SMT_LOCK_NOT_MATCHED;
                 }
                 
             } else {

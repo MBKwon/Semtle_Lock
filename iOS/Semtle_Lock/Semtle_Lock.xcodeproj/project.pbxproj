@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE8250061851589F00FCD5E1 /* Lock_Unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8250041851589F00FCD5E1 /* Lock_Unlocked.png */; };
+		FE8250071851589F00FCD5E1 /* Lock_Unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8250041851589F00FCD5E1 /* Lock_Unlocked.png */; };
+		FE8250081851589F00FCD5E1 /* Lock_Locked.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8250051851589F00FCD5E1 /* Lock_Locked.png */; };
+		FE8250091851589F00FCD5E1 /* Lock_Locked.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8250051851589F00FCD5E1 /* Lock_Locked.png */; };
 		FEB0BF181850097C00CAC3D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB0BF171850097C00CAC3D8 /* Foundation.framework */; };
 		FEB0BF1A1850097C00CAC3D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB0BF191850097C00CAC3D8 /* CoreGraphics.framework */; };
 		FEB0BF1C1850097C00CAC3D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB0BF1B1850097C00CAC3D8 /* UIKit.framework */; };
@@ -37,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE8250041851589F00FCD5E1 /* Lock_Unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lock_Unlocked.png; sourceTree = "<group>"; };
+		FE8250051851589F00FCD5E1 /* Lock_Locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lock_Locked.png; sourceTree = "<group>"; };
 		FEB0BF141850097C00CAC3D8 /* Semtle_Lock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Semtle_Lock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB0BF171850097C00CAC3D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FEB0BF191850097C00CAC3D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE82500A185158A700FCD5E1 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				FE8250051851589F00FCD5E1 /* Lock_Locked.png */,
+				FE8250041851589F00FCD5E1 /* Lock_Unlocked.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
 		FEB0BF0B1850097B00CAC3D8 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +134,7 @@
 		FEB0BF1D1850097C00CAC3D8 /* Semtle_Lock */ = {
 			isa = PBXGroup;
 			children = (
+				FE82500A185158A700FCD5E1 /* Image */,
 				FEB0BF4F185009EA00CAC3D8 /* Lock Library */,
 				FEB0BF261850097C00CAC3D8 /* SMTAppDelegate.h */,
 				FEB0BF271850097C00CAC3D8 /* SMTAppDelegate.m */,
@@ -249,6 +265,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEB0BF301850097C00CAC3D8 /* Images.xcassets in Resources */,
+				FE8250061851589F00FCD5E1 /* Lock_Unlocked.png in Resources */,
+				FE8250081851589F00FCD5E1 /* Lock_Locked.png in Resources */,
 				FEB0BF221850097C00CAC3D8 /* InfoPlist.strings in Resources */,
 				FEB0BF2B1850097C00CAC3D8 /* Main.storyboard in Resources */,
 			);
@@ -259,6 +277,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEB0BF411850097C00CAC3D8 /* InfoPlist.strings in Resources */,
+				FE8250071851589F00FCD5E1 /* Lock_Unlocked.png in Resources */,
+				FE8250091851589F00FCD5E1 /* Lock_Locked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +503,7 @@
 				FEB0BF481850097C00CAC3D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FEB0BF491850097C00CAC3D8 /* Build configuration list for PBXNativeTarget "Semtle_LockTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +512,7 @@
 				FEB0BF4B1850097C00CAC3D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

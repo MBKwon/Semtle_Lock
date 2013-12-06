@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class SMTLockController;
+
 @interface SMTViewController : UIViewController
+
+@property (nonatomic, strong) SMTLockController *lockController;
+@property (nonatomic, strong) IBOutlet UITextField *passwordText;
+@property (nonatomic, strong) IBOutlet UIButton *lockImage;
+
+-(IBAction)setPassword:(id)sender;
+-(IBAction)login:(id)sender;
 
 @end

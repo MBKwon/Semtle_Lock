@@ -17,10 +17,7 @@
 
 
 #define SMT_RESULT_CODE NSInteger
-#define FILE_NAME @"M0nWZhyJe9V5NtqYywRZ3yVFzvoeOLdaT1q3Gex8HAM="
-
-
-
+#define FILE_NAME @"M0nWZhyJe9V5NtqaT1q3Gex8HAM="
 #define DEFAULT_PATH [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
 #define ALERT_VIEW_RECT CGRectMake(0, 0, 500, 300)

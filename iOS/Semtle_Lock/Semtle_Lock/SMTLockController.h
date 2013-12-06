@@ -10,11 +10,13 @@
 
 //ERROR_DEFINE
 #define SMT_LOCK_OK                             0x00000000
-#define SMT_LOCK_NOT_KEY                        0x00000001
-#define SMT_LOCK_ENCRYPTION_FAIL                0x00000002
-#define SMT_LOCK_FILESAVE_FAIL                  0x00000003
-#define SMT_LOCK_FILELOAD_FAIL                  0x00000004
-#define SMT_LOCK_PASS_NOT_MATCH                 0x00000005
+
+
+#define SMT_LOCK_NOT_KEY                        0xff000001
+#define SMT_LOCK_ENCRYPTION_FAIL                0xff000002
+#define SMT_LOCK_FILESAVE_FAIL                  0xff000003
+#define SMT_LOCK_FILELOAD_FAIL                  0xff000004
+#define SMT_LOCK_NOT_MATCHED                    0xff000005
 
 
 @interface SMTLockController : NSObject
