@@ -22,6 +22,8 @@
     return self;
 }
 
+
+#pragma mark - internal methods
 -(SMT_RESULT_CODE)savePass:(NSData *)encryptedData
 {
     
@@ -59,6 +61,8 @@
     }
 }
 
+
+#pragma mark - public methods
 -(SMT_RESULT_CODE)isSetPass
 {
     
@@ -75,8 +79,6 @@
         return SMT_LOCK_NOT_PASSWORD;
     }
 }
-
-
 
 -(SMT_RESULT_CODE)setPassword:(NSString *)password
 {
@@ -96,6 +98,9 @@
         } else {
             
             SMT_RESULT_CODE result = [self savePass:encryptedData];
+            password = nil;
+            rowData = nil;
+            encryptedData = nil;
             
             return result;
         }

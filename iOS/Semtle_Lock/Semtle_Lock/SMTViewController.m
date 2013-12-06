@@ -61,6 +61,7 @@
         [_lockImage setSelected:YES];
     } else {
         NSLog(@"ERROR : %lx", (long)result);
+        [_lockImage setSelected:NO];
     }
 }
 
