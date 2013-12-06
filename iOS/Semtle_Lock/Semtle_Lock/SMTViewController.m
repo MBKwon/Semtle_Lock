@@ -21,6 +21,15 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [_passwordText becomeFirstResponder];
     _lockController = [[SMTLockController alloc] init];
+    
+    SMT_RESULT_CODE result = [_lockController isSetPass];
+    
+    if (result == SMT_LOCK_OK) {
+        [_lockImage setHidden:NO];
+    } else {
+        NSLog(@"%lx", (long)result);
+        [_lockImage setHidden:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning

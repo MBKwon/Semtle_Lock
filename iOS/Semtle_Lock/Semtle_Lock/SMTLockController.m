@@ -59,6 +59,23 @@
     }
 }
 
+-(SMT_RESULT_CODE)isSetPass
+{
+    
+    NSString *fullPath = [DEFAULT_PATH  stringByAppendingString:@"/"];
+    fullPath = [fullPath stringByAppendingString:FILE_NAME];
+    
+    
+    BOOL result = [[NSFileManager defaultManager] fileExistsAtPath:fullPath];
+    if (result == YES) {
+        return SMT_LOCK_OK;
+        
+    } else {
+        
+        return SMT_LOCK_NOT_PASSWORD;
+    }
+}
+
 
 
 -(SMT_RESULT_CODE)setPassword:(NSString *)password
