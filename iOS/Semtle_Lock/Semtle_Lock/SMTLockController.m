@@ -15,7 +15,7 @@
 {
     self = [super init];
     if (self) {
-        //initialized code
+        
         _key = @"PASSWORD_KEY";
     }
     
@@ -26,37 +26,29 @@
 #pragma mark - internal methods
 -(SMT_RESULT_CODE)savePass:(NSData *)encryptedData
 {
-    
-    NSString *fullPath = [DEFAULT_PATH  stringByAppendingString:@"/"];
-    fullPath = [fullPath stringByAppendingString:FILE_NAME];
-    
-    BOOL result = [encryptedData writeToFile:fullPath atomically:NO];
-    
-    if (result == YES) {
+    @try {
         
+        [[NSUserDefaults standardUserDefaults] setValue:encryptedData forKey:KEY_NAME];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         return SMT_LOCK_OK;
+    }
+    @catch (NSException *exception) {
         
-    } else {
-        
+        NSLog(@"%@", exception.description);
         return SMT_LOCK_FILESAVE_FAIL;
     }
 }
 
 -(SMT_RESULT_CODE)loadPass:(NSData **)encryptedData
 {
-    
-    NSString *fullPath = [DEFAULT_PATH  stringByAppendingString:@"/"];
-    fullPath = [fullPath stringByAppendingString:FILE_NAME];
-    
-    
-    BOOL result = [[NSFileManager defaultManager] fileExistsAtPath:fullPath];
-    if (result == YES) {
+    @try {
         
-        *encryptedData = [NSData dataWithContentsOfFile:fullPath];
+        *encryptedData = [[NSUserDefaults standardUserDefaults] dataForKey:KEY_NAME];
         return SMT_LOCK_OK;
+    }
+    @catch (NSException *exception) {
         
-    } else {
-        
+        NSLog(@"%@", exception.description);
         return SMT_LOCK_FILELOAD_FAIL;
     }
 }
@@ -65,17 +57,20 @@
 #pragma mark - public methods
 -(SMT_RESULT_CODE)isSetPass
 {
-    
-    NSString *fullPath = [DEFAULT_PATH  stringByAppendingString:@"/"];
-    fullPath = [fullPath stringByAppendingString:FILE_NAME];
-    
-    
-    BOOL result = [[NSFileManager defaultManager] fileExistsAtPath:fullPath];
-    if (result == YES) {
-        return SMT_LOCK_OK;
+    @try {
         
-    } else {
+        NSData *encryptedData = [[NSUserDefaults standardUserDefaults] dataForKey:KEY_NAME];
+        if (encryptedData == nil) {
+            
+            return SMT_LOCK_NOT_PASSWORD;
+            
+        } else {
+            return SMT_LOCK_OK;
+        }
+    }
+    @catch (NSException *exception) {
         
+        NSLog(@"%@", exception.description);
         return SMT_LOCK_NOT_PASSWORD;
     }
 }

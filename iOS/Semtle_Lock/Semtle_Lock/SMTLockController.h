@@ -11,7 +11,6 @@
 //ERROR_DEFINE
 #define SMT_LOCK_OK                             0x00000000
 
-
 #define SMT_LOCK_NOT_KEY                        0xff000001
 #define SMT_LOCK_NOT_PASSWORD                   0xff000002
 #define SMT_LOCK_ENCRYPTION_FAIL                0xff000003
